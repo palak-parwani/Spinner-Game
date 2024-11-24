@@ -125,7 +125,7 @@
 #wrapper {
     /* margin: 40px auto 0; */
     position: relative;
-    background-image: url(spinnerBack.png);
+    background-image: url(Spinner%20project/spinnerBack.png);
     height: 418px;
     width: 100%;
     background-size: cover;
@@ -403,7 +403,7 @@ opacity:0.1;
 
 /* congratulations model css */
 #congratsModal .congo-bg{
-    background-image: url("congoBack.png");
+    background-image: url("Spinner%20project/congoBack.png");
     height: 418px;
     width: 100%;
     background-position: center;
@@ -452,7 +452,7 @@ opacity:0.1;
 
 /* try again model css */
 #tryAgainModal .timer-text{
-    background-image: url("tryBack.jpg");
+    background-image: url("Spinner%20project/tryBack.jpg");
     height: 309px;
     width: 667px;
     background-size: cover;
