@@ -1,0 +1,569 @@
+.tap-here{
+    position: fixed;
+    bottom: 151px;
+    right: 64px;
+    z-index: 99;
+}
+.tap-here .btn{
+    background-color: red;
+    color: white;
+    font-size: 10px;
+    padding: 0px 8px;
+}
+@keyframes tapButtonPulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+    50% {
+        transform: scale(1.1); 
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); 
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.tap-btn {
+    animation: tapButtonPulse 1.5s infinite; 
+    transition: all 0.3s ease;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.tap-btn:hover {
+    transform: scale(1.2); 
+    background-color: #0056b3; 
+}
+
+.Spin-btn img{
+   
+    object-fit: cover;
+}
+.spin-section{
+    position: fixed;
+    bottom: 0;
+    right: 25px;
+}
+.spin-section img{
+    width: 116%;
+}
+.info-box{
+    background-color: #FFDCDD;
+    padding: 20px;
+}
+.track-btn .btn{
+    background-color: #d92027;
+    color: white;
+    font-weight: 500;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease, letter-spacing 0.3s ease;
+}
+.track-btn .btn:hover {
+    transform: scale(1.02);
+    letter-spacing: 0.4px;  
+    color: white;
+}
+.track-btn .btn:focus{
+    background-color: #d92027;
+    color: white;
+}
+.info-p{
+    color: #544444;
+}
+.modal-dialog.spinmodal {
+    max-width: 567px;
+}
+.input-border-style{
+    border-radius: 6px !important;
+    border-color: white !important;
+}
+.info-form{
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 6px;
+}
+.spinnerBack img{
+    height: 100%;
+    width: 100%;
+}
+/* .spinner-text{
+    position: absolute;
+    top: 45px;
+    left: 30%;   
+} */
+.modal-close-two{
+    position: absolute;
+    top: 12px;
+    z-index: 999;
+    right: 14px;
+}
+.spin-text{
+    color: #ffd869;
+    text-align: center;
+    margin-bottom: 0;
+}
+.win-text{
+    color: #f5cfcf;
+    font-size: 16px;
+    margin-bottom: 12px;
+    margin-top: 0;
+}
+
+
+
+
+
+/*WRAPPER*/
+#wrapper {
+    /* margin: 40px auto 0; */
+    position: relative;
+    background-image: url(spinnerBack.png);
+    height: 418px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 6px;
+    padding-bottom: 10px;
+}
+
+
+
+/*WHEEL*/
+#wheel{
+    width: 295px;
+    height: 295px;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    border: 12px solid #fff;
+	box-shadow:rgba(0,0,0,0.2) 0px 0px 10px, rgba(0,0,0,0.05) 0px 3px 0px;
+	transform: rotate(0deg);
+  
+}
+
+
+#inner-wheel{
+	width:100%;
+	height:100%;
+	
+	-webkit-transition: all 6s cubic-bezier(0,.99,.44,.99);
+	-moz-transition:    all 6 cubic-bezier(0,.99,.44,.99);
+	-o-transition:      all 6s cubic-bezier(0,.99,.44,.99);
+	-ms-transition:     all 6s cubic-bezier(0,.99,.44,.99);
+	transition:         all 6s cubic-bezier(0,0.99,0.44,0.99);	
+    
+}
+
+
+#wheel div.sec {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 130px 75px 0; /* Maintain consistent dimensions for all sections */
+    border-color: transparent transparent transparent transparent;
+    transform-origin: 75px 136px;
+    left: 61px;
+    top: 0px;
+}
+
+#wheel div.sec:nth-child(1) {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    border-color: #e60f17 transparent;
+}
+
+#wheel div.sec:nth-child(2) {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    border-color: #f4e4cc transparent;
+}
+
+#wheel div.sec:nth-child(3) {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    border-color: #e60f17 transparent;
+}
+
+#wheel div.sec:nth-child(4) {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    border-color: #f4e4cc transparent;
+}
+
+#wheel div.sec:nth-child(5) {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    border-color: #e60f17 transparent;
+}
+
+#wheel div.sec:nth-child(6) {
+    transform: rotate(225deg);
+    -webkit-transform: rotate(225deg);
+    border-color: #f4e4cc transparent;
+}
+
+#wheel div.sec:nth-child(7) {
+    transform: rotate(265deg);
+    -webkit-transform: rotate(265deg);
+    border-color: #e60f17 transparent;
+}
+
+#wheel div.sec:nth-child(8) {
+    transform: rotate(307deg);
+    -webkit-transform: rotate(307deg);
+    border-color: #f4e4cc transparent;
+}
+
+
+#wheel div.sec .fa{
+    width: 104px;
+    margin-top: -90px;
+    color: rgba(0, 0, 0, 0.2);
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    line-height: 21px;
+    margin-left: -53px;
+    font-weight: 600;
+    transform: rotate(91deg);
+}
+#wheel div.sec .AED-FS{
+    width: 122px;
+    margin-top: -74px;
+    color: rgba(0, 0, 0, 0.2);
+    display: block;
+    font-size: 11px;
+    margin-left: -65px;
+    font-weight: 700;
+    transform: rotate(83deg);
+}
+#wheel div.sec .b-fs{
+    width: 122px;
+    margin-top: -64px;
+    color: rgba(0, 0, 0, 0.2);
+    display: block;
+    font-size: 12px;
+    margin-left: -65px;
+    font-weight: 700;
+    transform: rotate(83deg);
+}
+
+
+
+#spin{
+    width: 63px;
+    height: 61px;
+    position: absolute;
+    top: 50%;
+    left: 52%;
+	margin:-34px 0 0 -34px;
+	border-radius:50%;
+	box-shadow:rgba(0,0,0,0.1) 0px 3px 0px;
+	z-index:1000;
+    background-image: linear-gradient(147deg, #e78a2c, #d7cf7e);
+	cursor:pointer;
+	font-family: 'Exo 2', sans-serif;
+  
+  -webkit-user-select: none; 
+  -moz-user-select: none;    
+  -ms-user-select: none;     
+  -o-user-select: none;
+  user-select: none;   
+}
+
+
+#spin:after{
+	content: "SPIN NOW";
+    text-align: center;
+    line-height: 16px;
+    color: #ea3d43;
+    position: relative;
+    z-index: 100000;
+    width: 65px;
+    height: 84px;
+    display: block;
+    top: 15px;
+    font-size: 15px;
+    font-weight: 600;
+    left: -1px;
+}
+
+#inner-spin{
+	width:54px;
+	height:54px;
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin:-27px 0 0 -27px;
+	border-radius:50%;
+	background:red;
+	z-index:999;
+	box-shadow:rgba(255,255,255,1) 0px -2px 0px inset, rgba(255,255,255,1) 0px 2px 0px inset,  rgba(0,0,0,0.4) 0px 0px 5px ;
+	
+	background: rgb(255,255,255); /* Old browsers */
+	background: -moz-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%, rgba(234,234,234,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(234,234,234,1))); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(234,234,234,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(234,234,234,1) 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(234,234,234,1) 100%); /* IE10+ */
+	background: radial-gradient(ellipse at center,  rgba(255,255,255,1) 0%,rgba(234,234,234,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eaeaea',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */	
+}
+
+#spin:active #inner-spin{
+	box-shadow:rgba(0,0,0,0.4) 0px 0px 5px inset;
+}
+
+#spin:active:after{
+	font-size:15px;	
+}
+
+
+
+#shine{
+	width:250px;
+	height:250px;
+	position:absolute;
+	top:0;
+	left:0;
+	background: -moz-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%, rgba(255,255,255,0.99) 1%, rgba(255,255,255,0.91) 9%, rgba(255,255,255,0) 100%); /* FF3.6+ */
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(255,255,255,1)), color-stop(1%,rgba(255,255,255,0.99)), color-stop(9%,rgba(255,255,255,0.91)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
+background: -webkit-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.99) 1%,rgba(255,255,255,0.91) 9%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.99) 1%,rgba(255,255,255,0.91) 9%,rgba(255,255,255,0) 100%); /* Opera 12+ */
+background: -ms-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.99) 1%,rgba(255,255,255,0.91) 9%,rgba(255,255,255,0) 100%); /* IE10+ */
+background: radial-gradient(ellipse at center,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.99) 1%,rgba(255,255,255,0.91) 9%,rgba(255,255,255,0) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+
+opacity:0.1;
+	
+}
+
+.spin-arrow{
+    position: absolute;
+    top: 50%;
+    right: 70%;
+}
+.spin-arrow img{
+    width: 83%;
+}
+
+/*ANIMATION*/
+@-webkit-keyframes hh {
+  0%, 100%{
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+  }
+
+  50%{
+    transform: rotate(7deg);
+    -webkit-transform: rotate(7deg);
+  }
+}
+
+@keyframes hh {
+   0%, 100%{
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+  }
+
+  50%{
+    transform: rotate(7deg);
+    -webkit-transform: rotate(7deg);
+  }
+}
+
+.spin {
+  -webkit-animation: hh 0.1s; /* Chrome, Safari, Opera */
+    animation: hh 0.1s;
+}
+
+.modal-close2{
+    position: absolute;
+    right: 16px;
+    top: 12px;
+    filter: invert(1);
+}
+
+
+
+/* congratulations model css */
+#congratsModal .congo-bg{
+    background-image: url("congoBack.png");
+    height: 418px;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    /* justify-content: center; */
+    flex-direction: column;
+    align-items: center;
+}
+#congratsModal .won-txt{
+    font-size: 23px;
+    margin-top: 20px;
+}
+#congratsModal .congo-text{
+    margin-top: 65px;
+}
+#congratsModal .reward-txt{
+    color: #e6353c;
+    font-size: 33px;
+    font-weight: 600;
+}
+#congratsModal .reward-txt2{
+    color: #e6353c;
+    font-size: 38px;
+    font-weight: 600;
+}
+#congratsModal .reward-txt2 span{
+    font-size: 28px;
+}
+#congratsModal .info-redeem{
+    width: 89%;
+    margin-top: 6px;
+    color: #696465;
+}
+#congratsModal .sign-up-btn{
+    background-color: #e6353c;
+    margin-top: 10px;
+    padding: 8px 31px;
+    font-size: 18px;
+}
+.modal-close3{
+    position: absolute;
+    right: 28px;
+    top: 26px;
+}
+
+/* try again model css */
+#tryAgainModal .timer-text{
+    background-image: url("tryBack.jpg");
+    height: 309px;
+    width: 667px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+}
+.modal-close4 {
+    position: absolute;
+    right: 19px;
+    top: 26px;
+}
+.modalDialog{
+    max-width: 689px !important;
+}
+#tryAgainModal .timer-text span{
+    color: #d92027;
+}
+#tryAgainModal .timer-text p{
+    margin-top: 10px;
+    font-size: 18px;
+    color: #696465;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Style for error messages */
+.error-message {
+    color: red;
+    font-size: 12px;
+    display: none; /* Initially hidden */
+    margin-top: 5px;
+}
+
+/* Optional: Style for input fields with errors */
+input.error {
+    border-color: red;
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+}
+
+
+@media (max-width: 480px){
+    .info-p{
+        font-size: 12px;
+    }
+}
+@media (max-width: 320px){
+    .info-p{
+        font-size: 10px;
+    }
+    #wheel {
+        width: 237px;
+        height: 237px;
+    }
+    #wrapper{
+        height: 394px;
+    }
+    #wheel div.sec .fa {
+        width: 82px;
+        font-size: 14px;
+        margin-top: -89px;
+    }
+    #wheel div.sec .AED-FS {
+        width: 76px;
+        margin-top: -91px;
+        font-size: 15px;
+        line-height: 17px;
+    }
+   
+    #wheel div.sec {
+        left: 34px;
+        top: -21px;
+    }
+    #spin{
+        top: 51%;
+    left: 53%;
+    }
+    .spin-text{
+        font-size: 23px;
+    }
+    .win-text {
+        font-size: 16px;
+    }
+}
+
+
+
+#spin.disabled {
+    pointer-events: none;
+}
+
+
+
+
+
+
+
+
+
+
+

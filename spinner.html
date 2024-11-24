@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>spinner project</title>
+    <link rel="stylesheet" href="spinner.css" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="spinner.js"></script>
+   
+</head>
+
+<body>
+    <div class="tap-here">
+        <button class="btn tap-btn">TAP HERE</button>
+    </div>
+    <div class="spin-section">
+        <button type="button" class="btn Spin-btn" data-bs-toggle="modal" data-bs-target="#spinAndWheelModal">
+            <img src="Santa.png" alt="" />
+        </button>
+    </div>
+
+    <!-- first Modal -->
+    <div class="modal fade" id="spinAndWheelModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered spinmodal">
+            <div class="modal-content">
+                <div class="info-box">
+                    <div class="modal-close d-flex justify-content-end">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <h1 class="text-center">Spin to Win!</h1>
+                    <p class="text-center info-p">
+                        Enter your info to get a chance to win big discounts
+                    </p>
+                    <div class="info-form">
+
+                        <input type="text" placeholder="Name" class="form-control input-border-style" required />
+                        <span id="name-error" class="error-message" style="color: red; display: none;">Please enter your name.</span>
+
+                        <input type="email" placeholder="Email" class="form-control input-border-style" required/>
+                        <span id="email-error" class="error-message" style="color: red; display: none;">Please enter a valid email.</span>
+
+                        <div class="track-btn pb-4">
+                            <button class="btn form-control" data-bs-target="#spinandwheelmodal2" data-bs-toggle="modal"
+                                data-bs-dismiss="modal">TRY YOUR LUCK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- second modal -->
+    <div class="modal fade" id="spinandwheelmodal2" tabindex="-1" aria-labelledby="spinnerModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-transparent border-0">
+                <div class="modal-body">
+                  
+                    <div id="wrapper">
+                        <div class="modal-close2">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="spinner-text">
+                            <h1 class="spin-text">Spin & Win</h1>
+                            <p class="win-text text-center">Win Big with Every Spin</p>
+                        </div>
+                        <div id="wheel">
+                            <div id="inner-wheel">
+                                <div class="sec">
+                                    <p class="fa text-white" id="spinner-section-1">50 AED OFF</p>
+                                </div>
+                                <div class="sec">
+                                    <p class="text-dark b-fs">Better Luck</p>
+                                </div>
+                                <div class="sec">
+                                    <p class="fa text-white" id="spinner-section-2">100 AED OFF</p>
+                                </div>
+                                <div class="sec">
+                                    <p class="text-dark AED-FS">Double Your Bonus</p>
+                                </div>
+                                <div class="sec">
+                                    <p class="fa text-white" id="spinner-section-3">50 AED OFF</p>
+                                </div>
+                                <div class="sec">
+                                    <p class="text-dark b-fs">Better Luck</p>
+                                </div>
+                              
+                                <div class="sec">
+                                    <p class="fa text-white" id="spinner-section-4">100 AED OFF</p>
+                                </div>
+                                <div class="sec">
+                                    <p class="text-dark AED-FS">Double Your Bonus</p>
+                                </div>
+                            </div>
+    
+                            <div id="spin">
+                                <div id="inner-spin"></div>
+                            </div>
+                            <div id="shine"></div>
+                        </div>
+                        <div class="spin-arrow">
+                            <img src="spinArrow.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   <!-- Congratulations Modal -->
+<div class="modal fade" id="congratsModal" tabindex="-1" aria-labelledby="congratsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 bg-transparent">
+            <div class="modal-body">
+                <div class="congo-bg">
+                    <div class="modal-close3">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <h2 class="congo-text">CONGRATULATIONS!</h2>
+                    <p class="won-txt">You've Won</p>
+                    <!-- <p class="reward-txt">Double Your Bonus</p> -->
+                    <p class="reward-txt2">200 AED <span>OFF</span></p>
+                    <p class="text-center info-redeem">Your Coupun code has been sent to your email. Use the same email address to sign up and redeem it.</p>
+                    <a href="#" class="sign-up-btn btn text-white">SIGN UP</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Try Again Modal -->
+<div class="modal fade " id="tryAgainModal" tabindex="-1" aria-labelledby="tryAgainModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modalDialog">
+        <div class="modal-content border-0 bg-transparent">          
+            <div class="modal-body">
+                <div class="timer-text">
+                    <div class="modal-close4">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <h1 class="try-text">Try Again, After <span>24 </span>Hours</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+
+</html>
