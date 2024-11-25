@@ -14,8 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const now = new Date().getTime();
 
     // Restrict spinning for the defined period
-     // if (lastSpin && now - lastSpin < 24 * 60 * 60 * 1000) {    //it is for 24hrs condition 
-    if (lastSpin && now - lastSpin < 5 * 1000) { // 30 seconds for testing
+     if (lastSpin && now - lastSpin < 24 * 60 * 60 * 1000) {   
         document.getElementById("spin").removeEventListener("click", spinHandler);
         hideModal("spinandwheelmodal2");
         showModal("tryAgainModal");
